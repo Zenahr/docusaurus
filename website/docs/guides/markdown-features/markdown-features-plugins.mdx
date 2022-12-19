@@ -127,6 +127,12 @@ The writeup below is **not** meant to be a comprehensive guide to creating a plu
 
 For example, let's make a plugin that visits every `h2` heading and adds a `Section X. ` prefix. First, create your plugin source file anywhere—you can even publish it as a separate npm package and install it like explained above. We would put ours at `src/remark/section-prefix.js`. A remark/rehype plugin is just a function that receives the `options` and returns a `transformer` that operates on the AST.
 
+:::note
+
+Make sure to put your plugin source file into your Docusaurus' project folder for testing. Otherwise you might encounter errors following this guide. A good place is `your-docu-site/src/remark/<plugin-name>.js`.
+
+:::
+
 ```js "src/remark/section-prefix.js"
 const visit = require('unist-util-visit');
 
